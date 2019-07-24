@@ -4,21 +4,19 @@
   </div>
 </template>
 
-<script lang="js">
-import Inspector from './components/Inspector.vue';
+<script>
+import Inspector from "./components/Inspector.vue";
+import { mapState, mapGetters } from "vuex";
 
 export default {
-  components: {
-    'inspector-component': Inspector,
-  },
   data() {
-    return {
-      message: 'Hello Universe',
-    };
+    return {};
+  },
+  components: {
+    "inspector-component": Inspector
   }
 };
 </script>
 
 <style>
-
 </style>

@@ -3,6 +3,7 @@
 const webpack = require('webpack');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const JsDocPlugin = require('jsdoc-webpack-plugin');
 
 module.exports = {
     mode: 'development',

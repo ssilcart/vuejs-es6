@@ -1,20 +1,26 @@
 <template>
-    <div>
-        <h1>soy el inspector</h1>
-        <Header name="Email" />
-    </div>
+  <div>
+    <h1>{{ connections }}</h1>
+    <button v-on:click="addConnections()">add connection</button>
+  </div>
 </template>
 
 <script>
-    import Header from './inspector/Header.vue';
+import { mapActions, mapState, mapGetters } from "vuex";
 
-    export default {
-       components: {
-           Header,
-       } 
+export default {
+  methods: {
+    ...mapActions(["addConnections"]),
+    ...mapGetters(["getConnections"])
+  },
+  computed: {
+    /**
+     * @function
+     * @returns {Array}
+     */
+    connections() {
+      return this.getConnections().map(conn => conn.targetId);
     }
+  }
+};
 </script>
-
-<style lang="scss" scoped>
-
-</style>
